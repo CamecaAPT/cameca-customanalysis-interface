@@ -20,6 +20,7 @@ ISLogo.gif
 *.user
 *.sln.docstates
 *.VC.db
+.vs
 
 # NuGet Packages
 *.nupkg
