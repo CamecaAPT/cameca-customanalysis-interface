@@ -54,7 +54,7 @@ jobs:
           dotnet build
           --no-restore
           --configuration Release
-          /p:Version=%GitVersion_SemVer%
+          /p:Version=$env:GitVersion_SemVer
       
       # Test (if present)
       - name: Test
