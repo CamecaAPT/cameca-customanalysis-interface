@@ -32,8 +32,8 @@ jobs:
           dotnet-version: 5.0.x
           
       # Install GitTools
-      - name: GitTools
-        uses: GitTools/actions@v0.9.11
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0.9.11
 
       # Determine SemVer with GitVersion
       - name: Determine Version
