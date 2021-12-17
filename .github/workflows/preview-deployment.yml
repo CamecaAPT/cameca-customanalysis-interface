@@ -78,7 +78,7 @@ jobs:
           dotnet nuget push
           *.nupkg
           --source https://www.myget.org/F/cameca-extensions-dev-preview/api/v2/package 
-          --api-key ${MYGET_TOKEN}
+          --api-key $env:MYGET_TOKEN
           --skip-duplicate
         env:
           MYGET_TOKEN: ${{ secrets.MYGET_API_KEY }}
@@ -88,7 +88,7 @@ jobs:
           dotnet nuget push
           *.snupkg
           --source https://www.myget.org/F/cameca-extensions-dev-preview/api/v3/index.json
-          --api-key ${MYGET_TOKEN}
+          --api-key $env:MYGET_TOKEN
           --skip-duplicate
         env:
           MYGET_TOKEN: ${{ secrets.MYGET_API_KEY }}
