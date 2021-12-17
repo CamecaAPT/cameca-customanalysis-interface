@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0-windows</TargetFramework>
+		<UseWPF>true</UseWPF>
+		<Nullable>enable</Nullable>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Title>Cameca.CustomAnalysis.Interface</Title>
+		<Authors>CAMECA Instruments, Inc</Authors>
+		<Company>CAMECA Instruments, Inc.</Company>
+		<Product>AP Suite</Product>
+		<Description>Interfaces and base classes for developing a custom analysis for CAMECA AP Suite</Description>
+		<Copyright>Copyright (c) CAMECA Instruments, Inc 2021</Copyright>
+		<PackageIcon>Cameca.png</PackageIcon>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="Cameca.png" Pack="true" PackagePath="" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Prism.Core" Version="7.2.0.1422" />
+	</ItemGroup>
+
+</Project>
