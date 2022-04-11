@@ -1,7 +1,6 @@
-﻿namespace Cameca.CustomAnalysis.Interface.View
+﻿namespace Cameca.CustomAnalysis.Interface.View;
+
+public interface IColorMapProvider
 {
-	public interface IColorMapProvider
-	{
-		ColorMap CreateDefaultBright();
-	}
+    ColorMap CreateDefaultBright();
 }

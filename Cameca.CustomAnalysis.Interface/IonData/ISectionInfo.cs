@@ -1,14 +1,13 @@
 ﻿using System;
 
-namespace Cameca.CustomAnalysis.Interface.IonData
+namespace Cameca.CustomAnalysis.Interface.IonData;
+
+public interface ISectionInfo
 {
-	public interface ISectionInfo
-	{
-		Type Type { get; }
-		string Unit { get; }
-		ulong RecordCount { get; }
-		uint ValuesPerRecord { get; }
-		byte[] ExtraData { get; }
-		bool IsVirtual { get; }
-	}
+    Type Type { get; }
+    string Unit { get; }
+    ulong RecordCount { get; }
+    uint ValuesPerRecord { get; }
+    byte[] ExtraData { get; }
+    bool IsVirtual { get; }
 }

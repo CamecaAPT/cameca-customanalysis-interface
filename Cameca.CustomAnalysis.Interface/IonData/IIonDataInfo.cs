@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 
-namespace Cameca.CustomAnalysis.Interface.IonData
+namespace Cameca.CustomAnalysis.Interface.IonData;
+
+public interface IIonDataInfo
 {
-	public interface IIonDataInfo
-	{
-		IAptFileInfo FileInfo { get; }
-		Dictionary<string, ISectionInfo> SectionInfo { get; }
-	}
+    IAptFileInfo FileInfo { get; }
+    Dictionary<string, ISectionInfo> SectionInfo { get; }
 }

@@ -1,8 +1,7 @@
-﻿namespace Cameca.CustomAnalysis.Interface.IonData
+﻿namespace Cameca.CustomAnalysis.Interface.IonData;
+
+public interface IElement
 {
-	public interface IElement
-	{
-		string Name { get; }
-		int Count { get; }
-	}
+    string Name { get; }
+    int Count { get; }
 }
