@@ -1,13 +1,12 @@
 ﻿using System.Collections.Generic;
 
-namespace Cameca.CustomAnalysis.Interface.IonData
+namespace Cameca.CustomAnalysis.Interface.IonData;
+
+public interface IIonTypeData
 {
-	public interface IIonTypeData
-	{
-		long IonCount();
-		IIonTypeInfo IonTypeInfo { get; }
-		IReadOnlyList<int> IonCountsPerType();
-		void InvalidateIonCountsPerType();
-		void DoneWriting();
-	}
+    long IonCount();
+    IIonTypeInfo IonTypeInfo { get; }
+    IReadOnlyList<int> IonCountsPerType();
+    void InvalidateIonCountsPerType();
+    void DoneWriting();
 }

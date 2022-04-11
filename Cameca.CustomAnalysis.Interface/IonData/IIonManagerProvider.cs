@@ -1,11 +1,10 @@
-﻿namespace Cameca.CustomAnalysis.Interface.IonData
-{
-	public interface IIonManagerProvider
-	{
-		IIonManager CreateIonManager();
-	}
+﻿namespace Cameca.CustomAnalysis.Interface.IonData;
 
-	public interface IIonManager
-	{
-	}
+public interface IIonManagerProvider
+{
+    IIonManager CreateIonManager();
+}
+
+public interface IIonManager
+{
 }

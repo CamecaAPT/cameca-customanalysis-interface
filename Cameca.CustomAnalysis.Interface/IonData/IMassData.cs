@@ -1,10 +1,9 @@
 ﻿using System;
 
-namespace Cameca.CustomAnalysis.Interface.IonData
+namespace Cameca.CustomAnalysis.Interface.IonData;
+
+public interface IMassData
 {
-	public interface IMassData
-	{
-		long IonCount();
-		void IterateValues(Action<float> func);
-	}
+    long IonCount();
+    void IterateValues(Action<float> func);
 }
