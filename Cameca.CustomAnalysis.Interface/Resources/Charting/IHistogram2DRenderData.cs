@@ -9,5 +9,5 @@ public interface IHistogram2DRenderData : IRasterRenderData
 	Vector2 Max { get; }
 	double Height { get; set; }
 	double Width { get; set; }
-	void Update(ReadOnlyMemory2<float> values, Vector2 binSize);
+	void Update(ReadOnlyMemoryND<float> values, Vector2 binSize);
 }
