@@ -3,7 +3,7 @@ using System.Numerics;
 
 namespace Cameca.CustomAnalysis.Interface;
 
-public interface IMesh
+public struct IndexedTriangleArray
 {
 	ReadOnlyMemory<Vector3> Vertices { get; }
 	ReadOnlyMemory<int> Indices { get; }
