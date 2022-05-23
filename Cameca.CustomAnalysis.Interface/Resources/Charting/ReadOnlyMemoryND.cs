@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Numerics;
 
 namespace Cameca.CustomAnalysis.Interface;
 
@@ -10,9 +9,9 @@ namespace Cameca.CustomAnalysis.Interface;
 public struct ReadOnlyMemoryND<T>
 {
     public ReadOnlyMemory<T> Memory;
-    public Vector<int> Shape;
+    public int[] Shape;
 
-    public ReadOnlyMemoryND(ReadOnlyMemory<T> memory, Vector<int> shape)
+    public ReadOnlyMemoryND(ReadOnlyMemory<T> memory, int[] shape)
     {
         Memory = memory;
         Shape = shape;
