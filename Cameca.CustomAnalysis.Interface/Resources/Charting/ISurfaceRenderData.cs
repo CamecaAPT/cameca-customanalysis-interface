@@ -4,6 +4,6 @@ namespace Cameca.CustomAnalysis.Interface;
 
 public interface ISurfaceRenderData : IRenderData
 {
-	IndexedTriangleArray SurfaceIndexedTriangleArray { get; set; }
+	IndexedTriangleArray SurfaceMesh { get; set; }
 	Color Color { get; set; }
 }
