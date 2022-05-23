@@ -3,8 +3,14 @@ using System.Numerics;
 
 namespace Cameca.CustomAnalysis.Interface;
 
-public struct IndexedTriangleArray
+public readonly struct IndexedTriangleArray
 {
-	ReadOnlyMemory<Vector3> Vertices { get; }
-	ReadOnlyMemory<int> Indices { get; }
+	public readonly ReadOnlyMemory<Vector3> Vertices;
+	public readonly ReadOnlyMemory<int> Indices;
+	
+	public IndexedTriangleArray(ReadOnlyMemory<Vector3> vertices, ReadOnlyMemory<int> indices)
+	{
+		Vertices = vertices;
+		Indices = indices;
+	}
 }
