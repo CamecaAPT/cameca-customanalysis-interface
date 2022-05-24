@@ -17,7 +17,7 @@ public class NodeAfterCreatedEventArgs : INodeTargetEvent
 
 public static class NodeAfterCreatedEventExtensions
 {
-	public static void PublishNodeCreated(
+	public static void PublishNodeAfterCreated(
 		this IEventAggregator eventAggregator,
 		Guid nodeId)
 	{
@@ -26,7 +26,7 @@ public static class NodeAfterCreatedEventExtensions
 			.Publish(new NodeAfterCreatedEventArgs(nodeId));
 	}
 
-	public static SubscriptionToken SubscribeNodeCreated(
+	public static SubscriptionToken SubscribeNodeAfterCreated(
 		this IEventAggregator eventAggregator,
 		Action<NodeAfterCreatedEventArgs> action,
 		Predicate<NodeAfterCreatedEventArgs>? filter = null)
