@@ -56,7 +56,7 @@ public sealed class IonFormula : IReadOnlyDictionary<string, int>, IEquatable<Io
 
 	    foreach (var (name, count) in _components)
 	    {
-		    if (!other.TryGetValue(name, out int otherCount) && count == otherCount)
+		    if (!other.TryGetValue(name, out int otherCount) || count != otherCount)
 			    return false;
 	    }
 
