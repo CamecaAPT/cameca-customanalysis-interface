@@ -3,5 +3,5 @@
 public interface IAnalysisMenuFactory
 {
 	AnalysisMenuLocation Location { get; }
-	IMenuItemBase CreateMenuItem(IAnalysisMenuContext context);
+	IMenuItem CreateMenuItem(IAnalysisMenuContext context);
 }
