@@ -1,6 +1,6 @@
 ﻿namespace Cameca.CustomAnalysis.Interface;
 
-public interface INodeDataFilterInterceptor
+public interface INodeDataFilter
 {
 	GetIndicesDelegate? FilterDelegate { get; set; }
 	bool IsInverted { get; set; }
