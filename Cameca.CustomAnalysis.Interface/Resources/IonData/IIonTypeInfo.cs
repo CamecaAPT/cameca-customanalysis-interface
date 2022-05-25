@@ -3,6 +3,6 @@
 public interface IIonTypeInfo
 {
     string Name { get; }
-    IIonFormula Formula { get; }
+    IonFormula Formula { get; }
     double Volume { get; }
 }

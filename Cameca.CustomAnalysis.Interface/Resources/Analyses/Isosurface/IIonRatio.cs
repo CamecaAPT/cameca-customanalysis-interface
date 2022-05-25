@@ -4,6 +4,6 @@ namespace Cameca.CustomAnalysis.Interface;
 
 public interface IIonRatio
 {
-    IReadOnlyCollection<IIonFormula> IonNumerators { get; }
-    IReadOnlyCollection<IIonFormula> IonDenominators { get; }
+    IReadOnlyCollection<IonFormula> IonNumerators { get; }
+    IReadOnlyCollection<IonFormula> IonDenominators { get; }
 }
