@@ -1,7 +1,7 @@
-﻿namespace Cameca.CustomAnalysis.Interface.Resources.Charting;
+﻿namespace Cameca.CustomAnalysis.Interface;
 
 public interface IColorMapFactory
 {
 	IColorMap CreateColorMap();
-	IColorStop AddColorStop(IColorMap colorMap);
+	IColorStop CreateColorStop();
 }
