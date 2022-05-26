@@ -1,14 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Windows.Media;
 
 namespace Cameca.CustomAnalysis.Interface;
 
-public interface IColorMap
+public interface IColorMap : INotifyPropertyChanged
 {
-	public Color Bottom { get; }
-	public Color NanColor { get; }
-	public Color OutOfRangeBottom { get; }
-	public Color OutOfRangeTop { get; }
-	public Color Top { get; }
-	public IReadOnlyList<IColorStop> ColorStops { get; }
+	Color Bottom { get; set; }
+	Color NanColor { get; set; }
+	Color OutOfRangeBottom { get; set; }
+	Color OutOfRangeTop { get; set; }
+	Color Top { get; set; }
+	ObservableCollection<IColorStop> ColorStops { get; }
 }
