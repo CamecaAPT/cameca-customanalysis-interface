@@ -4,5 +4,5 @@ namespace Cameca.CustomAnalysis.Interface;
 
 public interface IProgressDialogProvider
 {
-	IProgressDialog? Resolve(Guid instanceId);
+	IProgressDialog? Resolve(Guid nodeId);
 }
