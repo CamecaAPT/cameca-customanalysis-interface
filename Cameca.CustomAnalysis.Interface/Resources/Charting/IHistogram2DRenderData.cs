@@ -1,4 +1,5 @@
 ﻿using System.Numerics;
+using Microsoft.Toolkit.HighPerformance;
 
 namespace Cameca.CustomAnalysis.Interface;
 
@@ -9,5 +10,5 @@ public interface IHistogram2DRenderData : IRasterRenderData
 	Vector2 Max { get; }
 	double Height { get; set; }
 	double Width { get; set; }
-	void Update(ReadOnlyMemoryND<float> values, Vector2 binSize, Vector2 origin = default);
+	void Update(ReadOnlyMemory2D<float> values, Vector2 binSize, Vector2 origin = default);
 }

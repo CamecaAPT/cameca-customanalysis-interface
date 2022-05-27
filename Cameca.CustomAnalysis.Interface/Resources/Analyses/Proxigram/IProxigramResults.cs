@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.Toolkit.HighPerformance;
 
 namespace Cameca.CustomAnalysis.Interface;
 
@@ -7,97 +8,97 @@ public interface IProxigramResults
     /// <summary>
     /// 3D double array [ROIBin, IonType, XBin] 
     /// </summary>
-    ReadOnlyMemoryND<double> DistributedResults_Ionic { get;}
+    ReadOnlyMemory2D<double>[] DistributedResults_Ionic { get;}
 
     /// <summary>
     /// 3D double array [ROIBin, IonType, XBin] 
     /// </summary>
-    ReadOnlyMemoryND<double> DistributedBckgdVals_WPositivity_Ionic { get;}
+    ReadOnlyMemory2D<double>[] DistributedBckgdVals_WPositivity_Ionic { get;}
 
     /// <summary>
     /// 3D double array [ROIBin, IonType, XBin] 
     /// </summary>
-    ReadOnlyMemoryND<double> DistributedBckgdCorrectedVals_WPositivity_Ionic { get; }
+    ReadOnlyMemory2D<double>[] DistributedBckgdCorrectedVals_WPositivity_Ionic { get; }
 
     /// <summary>
     /// 3D double array [ROIBin, IonType, XBin] 
     /// </summary>
-    ReadOnlyMemoryND<double> DistributedBckgdVals_Ionic { get; }
+    ReadOnlyMemory2D<double>[] DistributedBckgdVals_Ionic { get; }
 
     /// <summary>
     /// 3D double array [ROIBin, IonType, XBin] 
     /// </summary>
-    ReadOnlyMemoryND<double> DistributedBckgdCorrectedVals_Ionic { get; }
+    ReadOnlyMemory2D<double>[] DistributedBckgdCorrectedVals_Ionic { get; }
 
     /// <summary>
     /// 3D double array [ROIBin, IonType, XBin] 
     /// </summary>
-    ReadOnlyMemoryND<double> DistributedErrors_Ionic { get; }
+    ReadOnlyMemory2D<double>[] DistributedErrors_Ionic { get; }
 
     /// <summary>
     /// 3D double array [ROIBin, IonType, XBin] 
     /// </summary>
-    ReadOnlyMemoryND<double> DistributedBckgdCorrectedErrors_Ionic { get; }
+    ReadOnlyMemory2D<double>[] DistributedBckgdCorrectedErrors_Ionic { get; }
 
     /// <summary>
     /// 3D double array [ROIBin, IonType, XBin] 
     /// </summary>
-    ReadOnlyMemoryND<uint> DistributedCounts_Ionic { get; }
+    ReadOnlyMemory2D<uint>[] DistributedCounts_Ionic { get; }
 
-    ReadOnlyMemoryND<uint> DistributedSumCountsInBin_Ionic { get; }
+    ReadOnlyMemory2D<uint> DistributedSumCountsInBin_Ionic { get; }
 
     /// <summary>
     /// 3D double array [ROIBin, IonType, XBin]  
     /// </summary>
-    ReadOnlyMemoryND<double> DistributedResults_Decomp { get; }
+    ReadOnlyMemory2D<double>[] DistributedResults_Decomp { get; }
 
     /// <summary>
     /// 3D double array [ROIBin, IonType, XBin] 
     /// </summary>
-    ReadOnlyMemoryND<double> DistributedBckgdVals_WPositivity_Decomp { get; }
+    ReadOnlyMemory2D<double>[] DistributedBckgdVals_WPositivity_Decomp { get; }
 
     /// <summary>
     /// 3D double array [ROIBin, IonType, XBin] 
     /// </summary>
-    ReadOnlyMemoryND<double> DistributedBckgdCorrectedVals_WPositivity_Decomp { get; }
+    ReadOnlyMemory2D<double>[] DistributedBckgdCorrectedVals_WPositivity_Decomp { get; }
 
     /// <summary>
     /// 3D double array [ROIBin, IonType, XBin] 
     /// </summary>
-    ReadOnlyMemoryND<double> DistributedBckgdVals_Decomp { get; }
+    ReadOnlyMemory2D<double>[] DistributedBckgdVals_Decomp { get; }
 
     /// <summary>
     /// 3D double array [ROIBin, IonType, XBin] 
     /// </summary>
-    ReadOnlyMemoryND<double> DistributedBckgdCorrectedVals_Decomp { get; }
+    ReadOnlyMemory2D<double>[] DistributedBckgdCorrectedVals_Decomp { get; }
 
     /// <summary>
     /// 3D double array [ROIBin, IonType, XBin]  
     /// </summary>
-    ReadOnlyMemoryND<double> DistributedErrors_Decomp { get; }
+    ReadOnlyMemory2D<double>[] DistributedErrors_Decomp { get; }
 
     /// <summary>
     /// 3D double array [ROIBin, IonType, XBin]  
     /// </summary>
-    ReadOnlyMemoryND<double> DistributedBckgdCorrectedErrors_Decomp { get; }
+    ReadOnlyMemory2D<double>[] DistributedBckgdCorrectedErrors_Decomp { get; }
 
     /// <summary>
     /// 3D double array [ROIBin, IonType, XBin]  
     /// </summary>
-    ReadOnlyMemoryND<uint> DistributedCounts_Decomp { get; }
+    ReadOnlyMemory2D<uint>[] DistributedCounts_Decomp { get; }
 
-    ReadOnlyMemoryND<uint> DistributedSumCountsInBin_Decomp { get; }
+    ReadOnlyMemory2D<uint> DistributedSumCountsInBin_Decomp { get; }
 
     /// <summary>
     /// Return raw proxigram count data.  3D unsigned int array [ROI, IonType, Bin] like Results
     /// </summary>
-    ReadOnlyMemoryND<uint> IonCounts { get; }
+    ReadOnlyMemory2D<uint>[] IonCounts { get; }
 
 
     /// <summary>
     /// Return raw proxigram background count data.  3D unsigned float array [ROI, IonType, Bin]
     /// </summary>
-    ReadOnlyMemoryND<double> BackgroundIonCounts { get; }
+    ReadOnlyMemory2D<double>[] BackgroundIonCounts { get; }
 
 
     /// <summary>
