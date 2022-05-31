@@ -6,6 +6,6 @@ namespace Cameca.CustomAnalysis.Interface;
 
 public interface IIsosurfaceAnalysis
 {
-    Task<ReadOnlyMemory<IndexedTriangleArray>> BuildIsosurface(BuildIsosurfaceParameters parameters, float isoLevel, IProgress<double>? progress = null, CancellationToken cancellationToken = default);
+    Task<ReadOnlyMemory<GridGeneratedInterface>> BuildIsosurface(BuildIsosurfaceParameters parameters, float isoLevel, IProgress<double>? progress = null, CancellationToken cancellationToken = default);
     Task<IInterfaceMetrics> CalculateInterfaceMetrics(IndexedTriangleArray interfaceMesh, IProgress<double>? progress = null, CancellationToken cancellationToken = default);
 }
