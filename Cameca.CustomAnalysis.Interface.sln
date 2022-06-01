@@ -10,9 +10,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
 		GitVersion.yml = GitVersion.yml
+		.github\workflows\preview-deployment.yml = .github\workflows\preview-deployment.yml
+		.github\workflows\release-deployment.yml = .github\workflows\release-deployment.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cameca.CustomAnalysis.Interface.Tests", "Cameca.CustomAnalysis.Interface.Tests\Cameca.CustomAnalysis.Interface.Tests.csproj", "{B90225AC-CC88-457B-827B-677D5383CE03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cameca.CustomAnalysis.Interface.Tests", "Cameca.CustomAnalysis.Interface.Tests\Cameca.CustomAnalysis.Interface.Tests.csproj", "{B90225AC-CC88-457B-827B-677D5383CE03}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{6A850DC7-3E8A-4355-96C1-4BA10E704A04}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{F9B5821C-76F7-40BD-B834-745B2529B7AE}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\preview-deployment.yml = .github\workflows\preview-deployment.yml
+		.github\workflows\release-deployment.yml = .github\workflows\release-deployment.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +41,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6A850DC7-3E8A-4355-96C1-4BA10E704A04} = {97ACA71B-93A1-4A5F-9609-AB0DF64FE268}
+		{F9B5821C-76F7-40BD-B834-745B2529B7AE} = {6A850DC7-3E8A-4355-96C1-4BA10E704A04}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {49b47868-67eb-4eb5-ad46-3f5f0a4141b9}
