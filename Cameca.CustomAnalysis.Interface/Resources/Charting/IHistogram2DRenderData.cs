@@ -10,5 +10,8 @@ public interface IHistogram2DRenderData : IRasterRenderData
 	Vector2 Max { get; }
 	double Height { get; set; }
 	double Width { get; set; }
+	void Update(ReadOnlyMemory2D<float> values, Vector2 binSize, Vector2 origin = default);
+	// ReSharper disable once MethodOverloadWithOptionalParameter
+	// Optional parameters overload is acceptable for backwards compatibility. Implementations will call same method
 	void Update(ReadOnlyMemory2D<float> values, Vector2 binSize, Vector2 origin = default, float? minValue = null, float? maxValue = null);
 }
