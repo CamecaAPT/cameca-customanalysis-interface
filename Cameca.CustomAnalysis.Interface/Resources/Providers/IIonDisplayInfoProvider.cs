@@ -4,5 +4,5 @@ namespace Cameca.CustomAnalysis.Interface;
 
 public interface IIonDisplayInfoProvider
 {
-	IIonDisplayInfo? Resolve(Guid viewModelId);
+	IIonDisplayInfo? Resolve(Guid nodeId);
 }
