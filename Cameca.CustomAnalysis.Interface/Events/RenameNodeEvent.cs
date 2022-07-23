@@ -3,21 +3,22 @@ using Prism.Events;
 
 namespace Cameca.CustomAnalysis.Interface;
 
-public class NodeRenameEvent : PubSubEvent<NodeRenameEventArgs> { }
+public class RenameNodeEvent : PubSubEvent<RenameNodeEventArgs> { }
 
-public class NodeRenameEventArgs : INodeTargetEvent
+public class RenameNodeEventArgs : INodeTargetEvent
 {
 	public Guid NodeId { get; }
+
 	public string Name { get; }
 
-	public NodeRenameEventArgs(Guid analysisNodeId, string name)
+	public RenameNodeEventArgs(Guid analysisNodeId, string name)
 	{
 		NodeId = analysisNodeId;
 		Name = name;
 	}
 }
 
-public static class NodeRenameEventExtensions
+public static class RenameNodeEventExtensions
 {
 	public static void PublishNodeRename(
 		this IEventAggregator eventAggregator,
@@ -25,18 +26,17 @@ public static class NodeRenameEventExtensions
 		string name)
 	{
 		eventAggregator
-			.GetEvent<NodeRenameEvent>()
-			.Publish(new NodeRenameEventArgs(nodeId, name));
+			.GetEvent<RenameNodeEvent>()
+			.Publish(new RenameNodeEventArgs(nodeId, name));
 	}
 
 	public static SubscriptionToken SubscribeNodeRename(
 		this IEventAggregator eventAggregator,
-		Action<NodeRenameEventArgs> action,
-		Predicate<NodeRenameEventArgs>? filter = null)
+		Action<RenameNodeEventArgs> action,
+		Predicate<RenameNodeEventArgs>? filter = null)
 	{
 		return eventAggregator
-			.GetEvent<NodeRenameEvent>()
+			.GetEvent<RenameNodeEvent>()
 			.Subscribe(action, filter: filter);
 	}
 }
-

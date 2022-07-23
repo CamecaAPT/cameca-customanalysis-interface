@@ -3,37 +3,36 @@ using Prism.Events;
 
 namespace Cameca.CustomAnalysis.Interface;
 
-public class NodeRemovedEvent : PubSubEvent<NodeRemovedEventArgs> { }
+public class NodeDeletedEvent : PubSubEvent<NodeDeletedEventArgs> { }
 
-public class NodeRemovedEventArgs : INodeTargetEvent
+public class NodeDeletedEventArgs : INodeTargetEvent
 {
 	public Guid NodeId { get; }
 
-	public NodeRemovedEventArgs(Guid analysisNodeId)
+	public NodeDeletedEventArgs(Guid analysisNodeId)
 	{
 		NodeId = analysisNodeId;
 	}
 }
 
-public static class NodeRemovedEventExtensions
+public static class NodeDeletedEventExtensions
 {
 	public static void PublishNodeRemoved(
 		this IEventAggregator eventAggregator,
 		Guid nodeId)
 	{
 		eventAggregator
-			.GetEvent<NodeRemovedEvent>()
-			.Publish(new NodeRemovedEventArgs(nodeId));
+			.GetEvent<NodeDeletedEvent>()
+			.Publish(new NodeDeletedEventArgs(nodeId));
 	}
 
 	public static SubscriptionToken SubscribeNodeRemoved(
 		this IEventAggregator eventAggregator,
-		Action<NodeRemovedEventArgs> action,
-		Predicate<NodeRemovedEventArgs>? filter = null)
+		Action<NodeDeletedEventArgs> action,
+		Predicate<NodeDeletedEventArgs>? filter = null)
 	{
 		return eventAggregator
-			.GetEvent<NodeRemovedEvent>()
+			.GetEvent<NodeDeletedEvent>()
 			.Subscribe(action, filter: filter);
 	}
 }
-

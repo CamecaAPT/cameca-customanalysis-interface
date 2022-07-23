@@ -5,13 +5,19 @@ namespace Cameca.CustomAnalysis.Interface;
 
 public class NodeCreatedEvent : PubSubEvent<NodeCreatedEventArgs> { }
 
-public class NodeCreatedEventArgs : INodeTargetEvent, INodeInstantiatedEventArgs
+public class NodeCreatedEventArgs : INodeTargetEvent
 {
 	public Guid NodeId { get; }
 
-	public NodeCreatedEventArgs(Guid analysisNodeId)
+	public EventTrigger Trigger { get; }
+
+	public byte[]? Data { get; }
+
+	public NodeCreatedEventArgs(Guid analysisNodeId, EventTrigger eventTrigger, byte[]? data = null)
 	{
 		NodeId = analysisNodeId;
+		Trigger = eventTrigger;
+		Data = data;
 	}
 }
 
@@ -19,11 +25,13 @@ public static class NodeCreatedEventExtensions
 {
 	public static void PublishNodeCreated(
 		this IEventAggregator eventAggregator,
-		Guid nodeId)
+		Guid nodeId,
+		EventTrigger eventTrigger,
+		byte[]? data = null)
 	{
 		eventAggregator
 			.GetEvent<NodeCreatedEvent>()
-			.Publish(new NodeCreatedEventArgs(nodeId));
+			.Publish(new NodeCreatedEventArgs(nodeId, eventTrigger, data));
 	}
 
 	public static SubscriptionToken SubscribeNodeCreated(
@@ -36,4 +44,3 @@ public static class NodeCreatedEventExtensions
 			.Subscribe(action, filter: filter);
 	}
 }
-
