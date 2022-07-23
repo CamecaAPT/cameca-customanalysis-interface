@@ -1,4 +1,4 @@
-﻿namespace Cameca.CustomAnalysis.Interface.Resources.IonData;
+﻿namespace Cameca.CustomAnalysis.Interface;
 
 public static class IonDataSectionName
 {

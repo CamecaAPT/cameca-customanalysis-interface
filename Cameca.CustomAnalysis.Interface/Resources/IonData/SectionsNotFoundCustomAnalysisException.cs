@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Cameca.CustomAnalysis.Interface.Resources.IonData;
+namespace Cameca.CustomAnalysis.Interface;
 
 public class SectionsNotFoundCustomAnalysisException : CustomAnalysisException
 {
