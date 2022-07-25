@@ -9,9 +9,12 @@ public class ViewModelAddedEventArgs : IViewModelTargetEvent
 {
 	public Guid ViewModelId { get; }
 
-	public ViewModelAddedEventArgs(Guid viewModelId)
+	public Guid OwnerNodeId { get; }
+
+	public ViewModelAddedEventArgs(Guid viewModelId, Guid ownerNodeId)
 	{
 		ViewModelId = viewModelId;
+		OwnerNodeId = ownerNodeId;
 	}
 }
 
@@ -19,11 +22,12 @@ public static class ViewModelAddedEventExtensions
 {
 	public static void PublishViewModelAdded(
 		this IEventAggregator eventAggregator,
-		Guid viewModelId)
+		Guid viewModelId,
+		Guid ownerNodeId)
 	{
 		eventAggregator
 			.GetEvent<ViewModelAddedEvent>()
-			.Publish(new ViewModelAddedEventArgs(viewModelId));
+			.Publish(new ViewModelAddedEventArgs(viewModelId, ownerNodeId));
 	}
 
 	public static SubscriptionToken SubscribeViewModelAdded(
