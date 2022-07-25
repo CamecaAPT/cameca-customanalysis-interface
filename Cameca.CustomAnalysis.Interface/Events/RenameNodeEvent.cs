@@ -20,7 +20,7 @@ public class RenameNodeEventArgs : INodeTargetEvent
 
 public static class RenameNodeEventExtensions
 {
-	public static void PublishNodeRename(
+	public static void PublishRenameNode(
 		this IEventAggregator eventAggregator,
 		Guid nodeId,
 		string name)
@@ -30,7 +30,7 @@ public static class RenameNodeEventExtensions
 			.Publish(new RenameNodeEventArgs(nodeId, name));
 	}
 
-	public static SubscriptionToken SubscribeNodeRename(
+	public static SubscriptionToken SubscribeRenameNode(
 		this IEventAggregator eventAggregator,
 		Action<RenameNodeEventArgs> action,
 		Predicate<RenameNodeEventArgs>? filter = null)

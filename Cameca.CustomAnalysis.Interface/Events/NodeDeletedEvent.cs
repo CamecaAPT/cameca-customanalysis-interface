@@ -17,7 +17,7 @@ public class NodeDeletedEventArgs : INodeTargetEvent
 
 public static class NodeDeletedEventExtensions
 {
-	public static void PublishNodeRemoved(
+	public static void PublishNodeDeleted(
 		this IEventAggregator eventAggregator,
 		Guid nodeId)
 	{
@@ -26,7 +26,7 @@ public static class NodeDeletedEventExtensions
 			.Publish(new NodeDeletedEventArgs(nodeId));
 	}
 
-	public static SubscriptionToken SubscribeNodeRemoved(
+	public static SubscriptionToken SubscribeNodeDeleted(
 		this IEventAggregator eventAggregator,
 		Action<NodeDeletedEventArgs> action,
 		Predicate<NodeDeletedEventArgs>? filter = null)

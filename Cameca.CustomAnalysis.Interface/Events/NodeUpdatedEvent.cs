@@ -17,16 +17,16 @@ public class NodeUpdatedEventArgs : INodeTargetEvent
 
 public static class NodeUpdatedEventExtensions
 {
-	public static void PublishNodeSaved(
+	public static void PublishNodeUpdated(
 		this IEventAggregator eventAggregator,
-		Guid analysisNodeId)
+		Guid nodeId)
 	{
 		eventAggregator
 			.GetEvent<NodeUpdatedEvent>()
-			.Publish(new NodeUpdatedEventArgs(analysisNodeId));
+			.Publish(new NodeUpdatedEventArgs(nodeId));
 	}
 
-	public static SubscriptionToken SubscribeNodeSaved(
+	public static SubscriptionToken SubscribeNodeUpdated(
 		this IEventAggregator eventAggregator,
 		Action<NodeUpdatedEventArgs> action,
 		Predicate<NodeUpdatedEventArgs>? filter = null)

@@ -17,7 +17,7 @@ public class ViewModelSavedEventArgs : IViewModelTargetEvent
 
 public static class ViewModelSavedEventExtensions
 {
-	public static void PublishViewModelCreated(
+	public static void PublishViewModelSaved(
 		this IEventAggregator eventAggregator,
 		Guid viewModelId)
 	{
@@ -26,7 +26,7 @@ public static class ViewModelSavedEventExtensions
 			.Publish(new ViewModelSavedEventArgs(viewModelId));
 	}
 
-	public static SubscriptionToken SubscribeViewModelCreated(
+	public static SubscriptionToken SubscribeViewModelSaved(
 		this IEventAggregator eventAggregator,
 		Action<ViewModelSavedEventArgs> action,
 		Predicate<ViewModelSavedEventArgs>? filter = null)

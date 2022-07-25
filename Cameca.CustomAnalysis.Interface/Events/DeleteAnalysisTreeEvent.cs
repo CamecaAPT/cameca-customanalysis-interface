@@ -17,7 +17,7 @@ public class DeleteAnalysisTreeEventArgs : IAnalysisTreeTargetEvent
 
 public static class DeleteAnalysisTreeEventExtensions
 {
-	public static void PublishNodeDelete(
+	public static void PublishDeleteAnalysisTree(
 		this IEventAggregator eventAggregator,
 		Guid analysisTreeId)
 	{
@@ -26,7 +26,7 @@ public static class DeleteAnalysisTreeEventExtensions
 			.Publish(new DeleteAnalysisTreeEventArgs(analysisTreeId));
 	}
 
-	public static SubscriptionToken SubscribeNodeDelete(
+	public static SubscriptionToken SubscribeDeleteAnalysisTree(
 		this IEventAggregator eventAggregator,
 		Action<DeleteAnalysisTreeEventArgs> action,
 		Predicate<DeleteAnalysisTreeEventArgs>? filter = null)

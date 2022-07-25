@@ -29,7 +29,7 @@ public class CreateViewModelEventArgs : INodeTargetEvent
 
 public static class CreateViewModelEventExtensions
 {
-	public static void PublishDisplayView(
+	public static void PublishCreateViewModel(
 		this IEventAggregator eventAggregator,
 		string viewModelName,
 		Guid ownerNodeId,
@@ -42,7 +42,7 @@ public static class CreateViewModelEventExtensions
 			.Publish(new CreateViewModelEventArgs(viewModelName, ownerNodeId, mode, data, matchExisting));
 	}
 
-	public static SubscriptionToken SubscribeDisplayView(
+	public static SubscriptionToken SubscribeCreateViewModel(
 		this IEventAggregator eventAggregator,
 		Action<CreateViewModelEventArgs> action,
 		Predicate<CreateViewModelEventArgs>? filter = null)

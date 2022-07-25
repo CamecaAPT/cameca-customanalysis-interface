@@ -19,11 +19,11 @@ public static class DeleteViewModelEventExtensions
 {
 	public static void PublishDeleteViewModel(
 		this IEventAggregator eventAggregator,
-		Guid nodeId)
+		Guid viewModelId)
 	{
 		eventAggregator
 			.GetEvent<DeleteViewModelEvent>()
-			.Publish(new DeleteViewModelEventArgs(nodeId));
+			.Publish(new DeleteViewModelEventArgs(viewModelId));
 	}
 
 	public static SubscriptionToken SubscribeDeleteViewModel(

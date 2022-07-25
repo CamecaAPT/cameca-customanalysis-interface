@@ -20,17 +20,17 @@ public class NodeInteractedEventArgs : INodeTargetEvent
 
 public static class NodeInteractedEventArgsExtensions
 {
-	public static void PublishNodeInteraction(
+	public static void PublishNodeInteracted(
 		this IEventAggregator eventAggregator,
-		Guid instanceId,
+		Guid nodeId,
 		InteractionType interaction)
 	{
 		eventAggregator
 			.GetEvent<NodeInteractedEvent>()
-			.Publish(new NodeInteractedEventArgs(instanceId, interaction));
+			.Publish(new NodeInteractedEventArgs(nodeId, interaction));
 	}
 
-	public static SubscriptionToken SubscribeNodeInteraction(
+	public static SubscriptionToken SubscribeNodeInteracted(
 		this IEventAggregator eventAggregator,
 		Action<NodeInteractedEventArgs> action,
 		Predicate<NodeInteractedEventArgs>? filter = null)

@@ -17,7 +17,7 @@ public class UpdateViewModelEventArgs : IViewModelTargetEvent
 
 public static class UpdateViewModelEventExtensions
 {
-	public static void PublishNodeUpdateData(
+	public static void PublishUpdateViewModel(
 		this IEventAggregator eventAggregator,
 		Guid viewModelId)
 	{
@@ -26,7 +26,7 @@ public static class UpdateViewModelEventExtensions
 			.Publish(new UpdateViewModelEventArgs(viewModelId));
 	}
 
-	public static SubscriptionToken SubscribeNodeUpdateData(
+	public static SubscriptionToken SubscribeUpdateViewModel(
 		this IEventAggregator eventAggregator,
 		Action<UpdateViewModelEventArgs> action,
 		Predicate<UpdateViewModelEventArgs>? filter = null)

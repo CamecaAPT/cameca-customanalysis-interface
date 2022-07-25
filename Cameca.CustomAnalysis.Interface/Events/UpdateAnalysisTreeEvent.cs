@@ -17,7 +17,7 @@ public class UpdateAnalysisTreeEventArgs : IAnalysisTreeTargetEvent
 
 public static class UpdateAnalysisTreeEventExtensions
 {
-	public static void PublishAnalysisTreeUpdateData(
+	public static void PublishUpdateAnalysisTree(
 		this IEventAggregator eventAggregator,
 		Guid analysisTreeId)
 	{
@@ -26,7 +26,7 @@ public static class UpdateAnalysisTreeEventExtensions
 			.Publish(new UpdateAnalysisTreeEventArgs(analysisTreeId));
 	}
 
-	public static SubscriptionToken SubscribeAnalysisTreeUpdateData(
+	public static SubscriptionToken SubscribeUpdateAnalysisTree(
 		this IEventAggregator eventAggregator,
 		Action<UpdateAnalysisTreeEventArgs> action,
 		Predicate<UpdateAnalysisTreeEventArgs>? filter = null)

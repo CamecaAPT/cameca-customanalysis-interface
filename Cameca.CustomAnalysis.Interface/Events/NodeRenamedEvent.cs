@@ -17,7 +17,7 @@ public class NodeRenamedEventArgs : INodeTargetEvent
 
 public static class NodeRenamedEventExtensions
 {
-	public static void PublishViewModelCreated(
+	public static void PublishNodeRenamed(
 		this IEventAggregator eventAggregator,
 		Guid nodeId)
 	{
@@ -26,7 +26,7 @@ public static class NodeRenamedEventExtensions
 			.Publish(new NodeRenamedEventArgs(nodeId));
 	}
 
-	public static SubscriptionToken SubscribeViewModelCreated(
+	public static SubscriptionToken SubscribeNodeRenamed(
 		this IEventAggregator eventAggregator,
 		Action<NodeRenamedEventArgs> action,
 		Predicate<NodeRenamedEventArgs>? filter = null)

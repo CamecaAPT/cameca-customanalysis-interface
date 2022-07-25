@@ -17,7 +17,7 @@ public class CloseAnalysisTreeEventArgs : IAnalysisTreeTargetEvent
 
 public static class CloseAnalysisTreeEventExtensions
 {
-	public static void PublishNodeClose(
+	public static void PublishCloseAnalysisTree(
 		this IEventAggregator eventAggregator,
 		Guid analysisTreeId)
 	{
@@ -26,7 +26,7 @@ public static class CloseAnalysisTreeEventExtensions
 			.Publish(new CloseAnalysisTreeEventArgs(analysisTreeId));
 	}
 
-	public static SubscriptionToken SubscribeNodeClose(
+	public static SubscriptionToken SubscribeCloseAnalysisTree(
 		this IEventAggregator eventAggregator,
 		Action<CloseAnalysisTreeEventArgs> action,
 		Predicate<CloseAnalysisTreeEventArgs>? filter = null)

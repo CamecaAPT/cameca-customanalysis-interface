@@ -20,17 +20,17 @@ public class RenameViewModelEventArgs : IViewModelTargetEvent
 
 public static class RenameViewModelEventExtensions
 {
-	public static void PublishViewModelRename(
+	public static void PublishRenameViewModel(
 		this IEventAggregator eventAggregator,
-		Guid nodeId,
+		Guid viewModelId,
 		string name)
 	{
 		eventAggregator
 			.GetEvent<RenameViewModelEvent>()
-			.Publish(new RenameViewModelEventArgs(nodeId, name));
+			.Publish(new RenameViewModelEventArgs(viewModelId, name));
 	}
 
-	public static SubscriptionToken SubscribeViewModelRename(
+	public static SubscriptionToken SubscribeRenameViewModel(
 		this IEventAggregator eventAggregator,
 		Action<RenameViewModelEventArgs> action,
 		Predicate<RenameViewModelEventArgs>? filter = null)

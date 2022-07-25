@@ -20,7 +20,7 @@ public class RenameAnalysisTreeEventArgs : IAnalysisTreeTargetEvent
 
 public static class RenameAnalysisTreeEventExtensions
 {
-	public static void PublishNodeRename(
+	public static void PublishRenameAnalysisTree(
 		this IEventAggregator eventAggregator,
 		Guid analysisTreeId,
 		string name)
@@ -30,7 +30,7 @@ public static class RenameAnalysisTreeEventExtensions
 			.Publish(new RenameAnalysisTreeEventArgs(analysisTreeId, name));
 	}
 
-	public static SubscriptionToken SubscribeNodeRename(
+	public static SubscriptionToken SubscribeRenameAnalysisTree(
 		this IEventAggregator eventAggregator,
 		Action<RenameAnalysisTreeEventArgs> action,
 		Predicate<RenameAnalysisTreeEventArgs>? filter = null)

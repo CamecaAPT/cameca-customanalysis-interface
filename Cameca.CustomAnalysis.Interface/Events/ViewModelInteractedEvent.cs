@@ -20,17 +20,17 @@ public class ViewModelInteractedEventArgs : IViewModelTargetEvent
 
 public static class ViewModelInteractedEventArgsExtensions
 {
-	public static void PublishViewModelInteraction(
+	public static void PublishViewModelInteracted(
 		this IEventAggregator eventAggregator,
-		Guid instanceId,
+		Guid viewModelId,
 		InteractionType interaction)
 	{
 		eventAggregator
 			.GetEvent<ViewModelInteractedEvent>()
-			.Publish(new ViewModelInteractedEventArgs(instanceId, interaction));
+			.Publish(new ViewModelInteractedEventArgs(viewModelId, interaction));
 	}
 
-	public static SubscriptionToken SubscribeViewModelInteraction(
+	public static SubscriptionToken SubscribeViewModelInteracted(
 		this IEventAggregator eventAggregator,
 		Action<ViewModelInteractedEventArgs> action,
 		Predicate<ViewModelInteractedEventArgs>? filter = null)

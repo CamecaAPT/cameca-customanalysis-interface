@@ -17,7 +17,7 @@ public class ViewModelDeletedEventArgs : IViewModelTargetEvent
 
 public static class ViewModelDeletedEventExtensions
 {
-	public static void PublishViewModelClosed(
+	public static void PublishViewModelDeleted(
 		this IEventAggregator eventAggregator,
 		Guid viewModelId)
 	{
@@ -26,7 +26,7 @@ public static class ViewModelDeletedEventExtensions
 			.Publish(new ViewModelDeletedEventArgs(viewModelId));
 	}
 
-	public static SubscriptionToken SubscribeViewModelClosed(
+	public static SubscriptionToken SubscribeViewModelDeleted(
 		this IEventAggregator eventAggregator,
 		Action<ViewModelDeletedEventArgs> action,
 		Predicate<ViewModelDeletedEventArgs>? filter = null)

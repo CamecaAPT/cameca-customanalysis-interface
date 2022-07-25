@@ -17,7 +17,7 @@ public class SaveAnalysisTreeEventArgs : IAnalysisTreeTargetEvent
 
 public static class SaveAnalysisTreeEventExtensions
 {
-	public static void PublishAnalysisSetActivateMainView(
+	public static void PublishSaveAnalysisTree(
 		this IEventAggregator eventAggregator,
 		Guid analysisTreeId)
 	{
@@ -26,7 +26,7 @@ public static class SaveAnalysisTreeEventExtensions
 			.Publish(new SaveAnalysisTreeEventArgs(analysisTreeId));
 	}
 
-	public static SubscriptionToken SubscribeAnalysisSetActivateMainView(
+	public static SubscriptionToken SubscribeSaveAnalysisTree(
 		this IEventAggregator eventAggregator,
 		Action<SaveAnalysisTreeEventArgs> action,
 		Predicate<SaveAnalysisTreeEventArgs>? filter = null)

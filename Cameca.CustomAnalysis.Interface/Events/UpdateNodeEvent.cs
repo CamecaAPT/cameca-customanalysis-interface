@@ -17,7 +17,7 @@ public class UpdateNodeEventArgs : INodeTargetEvent
 
 public static class UpdateNodeEventExtensions
 {
-	public static void PublishNodeUpdateData(
+	public static void PublishUpdateNode(
 		this IEventAggregator eventAggregator,
 		Guid nodeId)
 	{
@@ -26,7 +26,7 @@ public static class UpdateNodeEventExtensions
 			.Publish(new UpdateNodeEventArgs(nodeId));
 	}
 
-	public static SubscriptionToken SubscribeNodeUpdateData(
+	public static SubscriptionToken SubscribeUpdateNode(
 		this IEventAggregator eventAggregator,
 		Action<UpdateNodeEventArgs> action,
 		Predicate<UpdateNodeEventArgs>? filter = null)
