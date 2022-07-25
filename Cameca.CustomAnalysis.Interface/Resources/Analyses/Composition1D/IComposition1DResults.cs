@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Microsoft.Toolkit.HighPerformance;
 
 namespace Cameca.CustomAnalysis.Interface;
