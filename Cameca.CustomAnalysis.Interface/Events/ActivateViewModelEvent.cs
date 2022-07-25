@@ -17,7 +17,7 @@ public class ActivateViewModelEventArgs : IViewModelTargetEvent
 
 public static class ActivateViewModelEventExtensions
 {
-	public static void PublishAnalysisSetActivateMainView(
+	public static void PublishActivateViewModel(
 		this IEventAggregator eventAggregator,
 		Guid viewModelId)
 	{
@@ -26,7 +26,7 @@ public static class ActivateViewModelEventExtensions
 			.Publish(new ActivateViewModelEventArgs(viewModelId));
 	}
 
-	public static SubscriptionToken SubscribeAnalysisSetActivateMainView(
+	public static SubscriptionToken SubscribeActivateViewModel(
 		this IEventAggregator eventAggregator,
 		Action<ActivateViewModelEventArgs> action,
 		Predicate<ActivateViewModelEventArgs>? filter = null)

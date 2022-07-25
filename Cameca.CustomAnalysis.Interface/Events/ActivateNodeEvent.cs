@@ -17,7 +17,7 @@ public class ActivateNodeEventArgs : INodeTargetEvent
 
 public static class ActivateNodeEventExtensions
 {
-	public static void PublishAnalysisSetActivateMainView(
+	public static void PublishActivateNode(
 		this IEventAggregator eventAggregator,
 		Guid nodeId)
 	{
@@ -26,7 +26,7 @@ public static class ActivateNodeEventExtensions
 			.Publish(new ActivateNodeEventArgs(nodeId));
 	}
 
-	public static SubscriptionToken SubscribeAnalysisSetActivateMainView(
+	public static SubscriptionToken SubscribeActivateNode(
 		this IEventAggregator eventAggregator,
 		Action<ActivateNodeEventArgs> action,
 		Predicate<ActivateNodeEventArgs>? filter = null)
