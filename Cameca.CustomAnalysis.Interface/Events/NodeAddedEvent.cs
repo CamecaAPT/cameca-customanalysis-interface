@@ -9,9 +9,12 @@ public class NodeAddedEventArgs : INodeTargetEvent
 {
 	public Guid NodeId { get; }
 
-	public NodeAddedEventArgs(Guid analysisNodeId)
+	public EventTrigger Trigger { get; }
+
+	public NodeAddedEventArgs(Guid analysisNodeId, EventTrigger eventTrigger)
 	{
 		NodeId = analysisNodeId;
+		Trigger = eventTrigger;
 	}
 }
 
@@ -19,11 +22,12 @@ public static class NodeAddedEventExtensions
 {
 	public static void PublishNodeAdded(
 		this IEventAggregator eventAggregator,
-		Guid nodeId)
+		Guid nodeId,
+		EventTrigger eventTrigger)
 	{
 		eventAggregator
 			.GetEvent<NodeAddedEvent>()
-			.Publish(new NodeAddedEventArgs(nodeId));
+			.Publish(new NodeAddedEventArgs(nodeId, eventTrigger));
 	}
 
 	public static SubscriptionToken SubscribeNodeAdded(
@@ -35,4 +39,4 @@ public static class NodeAddedEventExtensions
 			.GetEvent<NodeAddedEvent>()
 			.Subscribe(action, filter: filter);
 	}
-}
+}

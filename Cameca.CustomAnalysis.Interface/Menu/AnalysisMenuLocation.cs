@@ -5,4 +5,5 @@ public enum AnalysisMenuLocation
 	None = 0,
 	Analysis = 1,
 	DataFilter = 2,
+	Action = 3,
 }

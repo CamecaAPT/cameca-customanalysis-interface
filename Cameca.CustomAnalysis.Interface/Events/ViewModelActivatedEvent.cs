@@ -19,11 +19,11 @@ public static class ViewModelActivatedEventExtensions
 {
 	public static void PublishViewModelActivated(
 		this IEventAggregator eventAggregator,
-		Guid analysisViewModelId)
+		Guid viewModelId)
 	{
 		eventAggregator
 			.GetEvent<ViewModelActivatedEvent>()
-			.Publish(new ViewModelActivatedEventArgs(analysisViewModelId));
+			.Publish(new ViewModelActivatedEventArgs(viewModelId));
 	}
 
 	public static SubscriptionToken SubscribeViewModelActivated(

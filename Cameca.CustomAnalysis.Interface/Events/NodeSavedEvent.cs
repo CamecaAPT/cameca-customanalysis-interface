@@ -5,7 +5,7 @@ namespace Cameca.CustomAnalysis.Interface;
 
 public class NodeSavedEvent : PubSubEvent<NodeSavedEventArgs> { }
 
-public class NodeSavedEventArgs : INodeTargetEvent, INodeInstantiatedEventArgs
+public class NodeSavedEventArgs : INodeTargetEvent
 {
 	public Guid NodeId { get; }
 
@@ -19,11 +19,11 @@ public static class NodeSavedEventExtensions
 {
 	public static void PublishNodeSaved(
 		this IEventAggregator eventAggregator,
-		Guid analysisNodeId)
+		Guid nodeId)
 	{
 		eventAggregator
 			.GetEvent<NodeSavedEvent>()
-			.Publish(new NodeSavedEventArgs(analysisNodeId));
+			.Publish(new NodeSavedEventArgs(nodeId));
 	}
 
 	public static SubscriptionToken SubscribeNodeSaved(

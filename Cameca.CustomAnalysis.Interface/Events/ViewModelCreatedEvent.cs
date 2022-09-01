@@ -5,36 +5,33 @@ namespace Cameca.CustomAnalysis.Interface;
 
 public class ViewModelCreatedEvent : PubSubEvent<ViewModelCreatedEventArgs> { }
 
-public class ViewModelCreatedEventArgs : INodeTargetEvent, IViewModelTargetEvent
+public class ViewModelCreatedEventArgs : IViewModelTargetEvent
 {
-	public string ViewModelName { get; }
-
-	public Guid NodeId { get; }
-
 	public Guid ViewModelId { get; }
+
+	public Guid OwnerNodeId { get; }
 
 	public ViewModelMode Mode { get; }
 
-	public ViewModelCreatedEventArgs(string viewModelName, Guid analysisViewModelId, Guid analysisNodeId, ViewModelMode mode)
+	public ViewModelCreatedEventArgs(Guid viewModelId, Guid ownerNodeId, ViewModelMode mode)
 	{
-		ViewModelName = viewModelName;
-		NodeId = analysisNodeId;
-		ViewModelId = analysisViewModelId;
+		ViewModelId = viewModelId;
+		OwnerNodeId = ownerNodeId;
 		Mode = mode;
 	}
 }
 
 public static class ViewModelCreatedEventExtensions
 {
-	public static void PublishViewModelCreated(this IEventAggregator eventAggregator,
-		string viewModelName,
+	public static void PublishViewModelCreated(
+		this IEventAggregator eventAggregator,
 		Guid viewModelId,
-		Guid nodeId,
+		Guid ownerNodeId,
 		ViewModelMode mode)
 	{
 		eventAggregator
 			.GetEvent<ViewModelCreatedEvent>()
-			.Publish(new ViewModelCreatedEventArgs(viewModelName, viewModelId, nodeId, mode));
+			.Publish(new ViewModelCreatedEventArgs(viewModelId, ownerNodeId, mode));
 	}
 
 	public static SubscriptionToken SubscribeViewModelCreated(

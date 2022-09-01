@@ -6,4 +6,3 @@ public interface IViewModelTargetEvent
 {
 	public Guid ViewModelId { get; }
 }
-
