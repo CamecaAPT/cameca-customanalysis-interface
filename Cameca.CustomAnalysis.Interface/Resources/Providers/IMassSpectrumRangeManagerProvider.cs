@@ -4,5 +4,5 @@ namespace Cameca.CustomAnalysis.Interface;
 
 public interface IMassSpectrumRangeManagerProvider
 {
-	ICanSaveState? Resolve(Guid nodeId);
+	IMassSpectrumRangeManager? Resolve(Guid nodeId);
 }

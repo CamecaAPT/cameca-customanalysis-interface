@@ -12,4 +12,5 @@ public static class IonDataSectionName
 	public const string PulseDelta = "Pulse Delta";
 	public const string HitType = "Hit Type";
 	public const string Phase = "Phase";
+	public const string Multiplicity = "Multiplicity";
 }
