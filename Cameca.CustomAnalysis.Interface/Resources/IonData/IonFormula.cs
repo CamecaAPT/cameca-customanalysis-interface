@@ -7,19 +7,20 @@ namespace Cameca.CustomAnalysis.Interface;
 
 public sealed class IonFormula : IReadOnlyDictionary<string, int>, IEquatable<IonFormula>
 {
-    private readonly Dictionary<string, int> _components;
+	public static readonly IonFormula Unknown = new IonFormula(Enumerable.Empty<Component>());
+
+	private readonly Dictionary<string, int> _components;
 
     public record Component(string Name, int Count);
 
     public IonFormula(IEnumerable<Component> components)
     {
         // Initialize backing components dictionary
-        _components = new Dictionary<string, int>(StringComparer.InvariantCultureIgnoreCase);
+        _components = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
         foreach (var component in components)
         {
             _components.Add(component.Name, component.Count);
         }
-        if (!_components.Any()) throw new ArgumentOutOfRangeException(nameof(components));
     }
 
     public IEnumerator<KeyValuePair<string, int>> GetEnumerator() => _components.GetEnumerator();
