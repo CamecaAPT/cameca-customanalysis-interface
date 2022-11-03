@@ -77,7 +77,7 @@ public sealed class IonFormula : IReadOnlyDictionary<string, int>, IEquatable<Io
 		    hash.Add(name);
 			hash.Add(count);
 		}
-	    return _components.GetHashCode();
+	    return hash.ToHashCode();
     }
 
     public static bool operator ==(IonFormula? left, IonFormula? right)
