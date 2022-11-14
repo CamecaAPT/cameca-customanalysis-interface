@@ -4,22 +4,13 @@ using System.Windows.Media;
 
 namespace Cameca.CustomAnalysis.Interface;
 
-public interface ISelector2dRenderData : IRenderData
+public interface ISelector2DRenderData : IRenderData
 {
-	/// <summary>Gets or sets the widget depth factor.</summary>
-	public float Depth { get; set; }
+	/// <summary>Gets or sets the widget minimum corner point</summary>
+	public Vector3 MinPoint { get; set; }
 
-	/// <summary>Gets left-bottom point X coordinate.</summary>
-	public float Left { get; set; }
-
-	/// <summary>Gets left-bottom point Y coordinate.</summary>
-	public float Bottom { get; set; }
-
-	/// <summary>Gets right-top point X coordinate.</summary>
-	public float Right { get; set; }
-
-	/// <summary>Gets right-top point Y coordinate.</summary>
-	public float Top { get; set; }
+	/// <summary>Gets or sets the widget maximum corner point</summary>
+	public Vector3 MaxPoint { get; set; }
 
 	/// <summary>Gets or sets the widget controller color.</summary>
 	public Color ControllersColor { get; set; }
@@ -42,9 +33,9 @@ public interface ISelector2dRenderData : IRenderData
 	/// <summary>Gets or sets the widget rectangle outline color.</summary>
 	public Color RectOutlineColor { get; set; }
 
-	/// <summary>Gets or sets the widget min border.</summary>
-	public Vector2 MinBound { get; set; }
+	/// <summary>Gets or sets the widget min allowed corner.</summary>
+	public Vector3 MinBoundsCorner { get; set; }
 
-	/// <summary>Gets or sets the widget max border.</summary>
-	public Vector2 MaxBound { get; set; }
+	/// <summary>Gets or sets the widget max allowed corner.</summary>
+	public Vector2 MaxBoundsCorner { get; set; }
 }
