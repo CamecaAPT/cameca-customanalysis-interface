@@ -37,5 +37,5 @@ public interface ISelector2DRenderData : IRenderData
 	public Vector3 MinBoundsCorner { get; set; }
 
 	/// <summary>Gets or sets the widget max allowed corner.</summary>
-	public Vector2 MaxBoundsCorner { get; set; }
+	public Vector3 MaxBoundsCorner { get; set; }
 }
