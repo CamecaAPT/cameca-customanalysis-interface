@@ -8,5 +8,5 @@ public interface IRenderDataFactory
     ILineRenderData CreateLine();
     IHistogramRenderData CreateHistogram();
     IHistogram2DRenderData CreateHistogram2D();
-    ISelector2DRenderData CreateSelector2D();
+    ISelectionWidgetRenderData CreateSelectionWidget();
 }
