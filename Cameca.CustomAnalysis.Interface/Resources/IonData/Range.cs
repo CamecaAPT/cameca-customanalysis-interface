@@ -1,3 +1,3 @@
 ﻿namespace Cameca.CustomAnalysis.Interface;
 
-public record Range(float Min, float Max);
+public record Range(double Min, double Max, string? Name = null);

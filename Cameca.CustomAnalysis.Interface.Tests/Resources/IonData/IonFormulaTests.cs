@@ -10,6 +10,26 @@ public class IonFormulaTests
 	}
 
 	[Test]
+	public void IonFormulaComponentHashEqualsTest()
+	{
+		var x = new IonFormula.Component("Cu", 1);
+		var y = new IonFormula.Component("Cu", 1);
+		var xHash = x.GetHashCode();
+		var yHash = y.GetHashCode();
+		Assert.AreEqual(xHash, yHash);
+	}
+
+	[Test]
+	public void IonFormulaHashEqualsTest()
+	{
+		var x = new IonFormula(new[] { new IonFormula.Component("Cu", 1) });
+		var y = new IonFormula(new[] { new IonFormula.Component("Cu", 1) });
+		var xHash = x.GetHashCode();
+		var yHash = y.GetHashCode();
+		Assert.AreEqual(xHash, yHash);
+	}
+
+	[Test]
 	public void IonFormulaEqualsTest()
 	{
 		var x = new IonFormula(new[] { new IonFormula.Component("Cu", 1) });
