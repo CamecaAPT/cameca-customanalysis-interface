@@ -7,5 +7,5 @@ public interface IMassSpectrumRangeManager
 {
 	bool IsEditable { get; }
 	IDictionary<IonFormula, IonRangeDefinition> GetRanges();
-	Task SetRanges(IDictionary<IonFormula, IonRangeDefinition> ranges);
+	Task<bool> SetRanges(IDictionary<IonFormula, IonRangeDefinition> ranges);
 }
