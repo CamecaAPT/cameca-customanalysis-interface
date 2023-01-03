@@ -3,8 +3,10 @@ using Prism.Events;
 
 namespace Cameca.CustomAnalysis.Interface;
 
+[Obsolete($"Incorrect naming: Use {nameof(NodeRemovingEvent)}")]
 public class NodeActivatedEvent : PubSubEvent<NodeActivatedEventArgs> { }
 
+[Obsolete($"Incorrect naming: Use {nameof(NodeRemovingEventArgs)}")]
 public class NodeActivatedEventArgs : INodeTargetEvent
 {
 	public Guid NodeId { get; }
@@ -15,8 +17,10 @@ public class NodeActivatedEventArgs : INodeTargetEvent
 	}
 }
 
+[Obsolete($"Incorrect naming: Use {nameof(NodeRemovingEventExtensions)}")]
 public static class NodeActivatedEventExtensions
 {
+	[Obsolete($"Incorrect naming: Use {nameof(NodeRemovingEventExtensions)}.{nameof(PublishNodeRemoved)}")]
 	public static void PublishNodeRemoved(
 		this IEventAggregator eventAggregator,
 		Guid nodeId)
@@ -26,6 +30,7 @@ public static class NodeActivatedEventExtensions
 			.Publish(new NodeActivatedEventArgs(nodeId));
 	}
 
+	[Obsolete($"Incorrect naming: Use {nameof(NodeRemovingEventExtensions)}.{nameof(SubscribeNodeRemoved)}")]
 	public static SubscriptionToken SubscribeNodeRemoved(
 		this IEventAggregator eventAggregator,
 		Action<NodeActivatedEventArgs> action,
