@@ -4,6 +4,6 @@ public interface INodeDataFilter
 {
 	GetIndicesDelegate? FilterDelegate { get; set; }
 	bool IsInverted { get; set; }
-	string? FilterProgressMessage { get; set; }
-	void FilterDataChanged();
+	string? FilterProgressMessage { get => null; set { } }
+	void FilterDataChanged() { }
 }
