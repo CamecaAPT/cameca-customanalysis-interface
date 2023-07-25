@@ -33,7 +33,7 @@ public class IonFormulaIsotopeOptions
 	/// See <see cref="INodeElementDataSet.ElementDataSetId"/> for retrieving the current element data set,
 	/// or <see cref="IElementDataSetService"/> for retrieving specific element data sets.
 	/// </remarks>
-	public int? ElementDataSet { get; init; } = null;
+	public int? ElementDataSetId { get; init; } = null;
 
 	/// <summary>
 	/// Normaize remaining isotope abundances after any filtering to sum to 1.
