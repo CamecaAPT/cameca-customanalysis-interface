@@ -22,7 +22,8 @@ jobs:
     runs-on: windows-latest
   
     outputs:
-      semVer: ${{ steps.gitversion.outputs.semVer }}
+      sem-ver: ${{ steps.gitversion.outputs.semVer }}
+      build-configuration:  ${{ env.BUILD_CONFIGURATION }}
       
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -48,15 +49,15 @@ jobs:
     needs: setup
     uses: CamecaAPT/workflows/.github/workflows/build.yml@main
     with:
-      build-configuration: ${{ env.BUILD_CONFIGURATION }}
-      version: ${{ needs.setup.outputs.semVer }}
+      build-configuration: ${{ needs.setup.outputs.build-configuration }}
+      version: ${{ needs.setup.outputs.sem-ver }}
   
   pack:
     needs: [setup, build]
     uses: CamecaAPT/workflows/.github/workflows/pack.yml@main
     with:
-      build-configuration: ${{ env.BUILD_CONFIGURATION }}
-      version: ${{ needs.setup.outputs.semVer }}
+      build-configuration: ${{ needs.setup.outputs.build-configuration }}
+      version: ${{ needs.setup.outputs.sem-ver }}
   
   push:
     needs: [setup, pack]
