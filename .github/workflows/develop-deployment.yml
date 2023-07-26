@@ -34,6 +34,9 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 6.0.x
+          source-url: https://pkgs.dev.azure.com/cameca/Extensions/_packaging/extensions-dev-preview/nuget/v3/index.json
+		env:
+		  NUGET_AUTH_TOKEN: ${{ secrets.AZURE_PACKAGE_READ_WRITE }}
           
       # Install GitTools
       - name: Install GitVersion
@@ -84,18 +87,12 @@ jobs:
         run: >
           dotnet nuget push
           *.nupkg
-          --source https://pkgs.dev.azure.com/cameca/Extensions/_packaging/extensions-dev-preview/nuget/v3/index.json
           --api-key az
           --skip-duplicate
-        env:
-          NUGET_AUTH_TOKEN: ${{ secrets.AZURE_PACKAGE_READ_WRITE }}
           
       - name: Push (Symbols Package)
         run: >
           dotnet nuget push
           *.snupkg
-          --source https://pkgs.dev.azure.com/cameca/Extensions/_packaging/extensions-dev-preview/nuget/v3/index.json
           --api-key az
           --skip-duplicate
-        env:
-          NUGET_AUTH_TOKEN: ${{ secrets.AZURE_PACKAGE_READ_WRITE }}
