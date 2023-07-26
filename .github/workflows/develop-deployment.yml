@@ -20,7 +20,10 @@ jobs:
   setup:
     # The type of runner that the job will run on
     runs-on: windows-latest
-
+  
+    outputs:
+      semVer: ${{ steps.gitversion.outputs.semVer }}
+      
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -46,14 +49,14 @@ jobs:
     uses: CamecaAPT/workflows/.github/workflows/build.yml@main
     with:
       build-configuration: $env:BUILD_CONFIGURATION
-      version: $env:GitVersion_SemVer
+      version: ${{ needs.setup.outputs.semVer }}
   
   pack:
     needs: [setup, build]
     uses: CamecaAPT/workflows/.github/workflows/pack.yml@main
     with:
       build-configuration: $env:BUILD_CONFIGURATION
-      version: $env:GitVersion_SemVer
+      version: ${{ needs.setup.outputs.semVer }}
   
   push:
     needs: [setup, pack]
