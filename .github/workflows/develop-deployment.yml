@@ -84,18 +84,18 @@ jobs:
         run: >
           dotnet nuget push
           *.nupkg
-          --source https://www.myget.org/F/cameca-extensions-dev-preview/api/v2/package 
-          --api-key $env:MYGET_TOKEN
+          --source https://pkgs.dev.azure.com/cameca/Extensions/_packaging/extensions-dev-preview/nuget/v3/index.json
+          --api-key az
           --skip-duplicate
         env:
-          MYGET_TOKEN: ${{ secrets.MYGET_API_KEY }}
+          NUGET_AUTH_TOKEN: ${{ secrets.AZURE_PACKAGE_READ_WRITE }}
           
       - name: Push (Symbols Package)
         run: >
           dotnet nuget push
           *.snupkg
-          --source https://www.myget.org/F/cameca-extensions-dev-preview/api/v3/index.json
-          --api-key $env:MYGET_TOKEN
+          --source https://pkgs.dev.azure.com/cameca/Extensions/_packaging/extensions-dev-preview/nuget/v3/index.json
+          --api-key az
           --skip-duplicate
         env:
-          MYGET_TOKEN: ${{ secrets.MYGET_API_KEY }}
+          NUGET_AUTH_TOKEN: ${{ secrets.AZURE_PACKAGE_READ_WRITE }}
