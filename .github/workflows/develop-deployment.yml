@@ -48,14 +48,14 @@ jobs:
     needs: setup
     uses: CamecaAPT/workflows/.github/workflows/build.yml@main
     with:
-      build-configuration: $env:BUILD_CONFIGURATION
+      build-configuration: ${{ env.BUILD_CONFIGURATION }}
       version: ${{ needs.setup.outputs.semVer }}
   
   pack:
     needs: [setup, build]
     uses: CamecaAPT/workflows/.github/workflows/pack.yml@main
     with:
-      build-configuration: $env:BUILD_CONFIGURATION
+      build-configuration: ${{ env.BUILD_CONFIGURATION }}
       version: ${{ needs.setup.outputs.semVer }}
   
   push:
