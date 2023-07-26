@@ -35,9 +35,9 @@ jobs:
         with:
           dotnet-version: 6.0.x
           source-url: https://pkgs.dev.azure.com/cameca/Extensions/_packaging/extensions-dev-preview/nuget/v3/index.json
-		env:
-		  NUGET_AUTH_TOKEN: ${{ secrets.AZURE_PACKAGE_READ_WRITE }}
-          
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.AZURE_PACKAGE_READ_WRITE }}
+
       # Install GitTools
       - name: Install GitVersion
         uses: gittools/actions/gitversion/setup@v0.9.11
