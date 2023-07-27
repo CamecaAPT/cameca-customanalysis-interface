@@ -14,7 +14,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build:
-    uses: CamecaAPT/workflows/.github/workflows/build-deploy-gitversion.yml@develop
+    uses: CamecaAPT/workflows/.github/workflows/build-deploy-gitversion.yml@main
     with:
       build-configuration: Release
       dotnet-version: ${{ vars.DOTNET_VERSION }}
