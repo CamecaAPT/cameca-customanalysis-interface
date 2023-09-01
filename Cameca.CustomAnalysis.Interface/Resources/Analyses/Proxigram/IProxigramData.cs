@@ -3,7 +3,10 @@ using CommunityToolkit.HighPerformance;
 
 namespace Cameca.CustomAnalysis.Interface;
 
-public interface IProxigramResults
+[Obsolete("Use IProxigramData instead")]
+public interface IProxigramResults : IProxigramData { }
+
+public interface IProxigramData
 {
     /// <summary>
     /// 3D double array [ROIBin, IonType, XBin] 
