@@ -5,7 +5,7 @@ public interface IPeakDecompositionRecord
 	IonFormula Formula { get; }
 	int Charge { get; }
 	double Mass { get; }
-	double Low { get; }
+	double Lower { get; }
 	double Upper { get; }
 	int UncorrectedCounts { get; }
 	int BackgroundCorrectedCounts { get; }
