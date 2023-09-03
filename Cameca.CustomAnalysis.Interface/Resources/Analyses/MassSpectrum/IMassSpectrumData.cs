@@ -2,6 +2,6 @@
 
 public interface IMassSpectrumData
 {
-	IHistogramData MassHistogram { get; set; }
-	IHistogramData BackgroundModel { get; set; }
+	IHistogramData MassHistogram { get; }
+	IHistogramData BackgroundModel { get; }
 }

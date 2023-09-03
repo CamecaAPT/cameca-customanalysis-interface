@@ -8,5 +8,5 @@ public interface IHistogramData
 	double BinWidth { get; }
 	double BinCenter { get; }
 	long TotalCount { get; }
-	ReadOnlyMemory<float> Values { get; set; }
+	ReadOnlyMemory<float> Values { get; }
 }
