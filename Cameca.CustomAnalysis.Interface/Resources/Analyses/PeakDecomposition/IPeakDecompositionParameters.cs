@@ -1,7 +1,10 @@
-﻿namespace Cameca.CustomAnalysis.Interface;
+﻿using System.Collections.Generic;
+
+namespace Cameca.CustomAnalysis.Interface;
 
 public interface IPeakDecompositionParameters
 {
+	IEnumerable<IPeakDecompositionInputIon> InputIons { get; }
 	PeakDecompositionBackgroundModel BackgroundModel { get; }
 	/// <summary>
 	/// The default range of mass-to-charge values in Da that lies below the low-value edge of the auto-generated range that is used in the calculation of background;
