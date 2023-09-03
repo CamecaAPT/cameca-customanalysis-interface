@@ -10,7 +10,7 @@ public interface IProxigramAnalysis
 	{
 		// Call obsolete method with default implementation until future breaking release
 #pragma warning disable CS0618 // Type or member is obsolete
-		return await Run(
+		return (IProxigramData)await Run(
 			volume, new ProxigramParameters
 			{
 				BinSize = parameters.BinSize,

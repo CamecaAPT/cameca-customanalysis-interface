@@ -10,7 +10,7 @@ public interface IComposition1DAnalysis
 	{
 		// Call obsolete method with default implementation until future breaking release
 #pragma warning disable CS0618 // Type or member is obsolete
-		return await Run(
+		return (IComposition1DData)await Run(
 			new Composition1DParameters
 			{
 				Mode = parameters.Mode,
