@@ -3,7 +3,10 @@ using CommunityToolkit.HighPerformance;
 
 namespace Cameca.CustomAnalysis.Interface;
 
-public interface IComposition1DResults
+[Obsolete("Use IComposition1DData instead")]
+public interface IComposition1DResults : IComposition1DData { }
+
+public interface IComposition1DData
 {
 	/// <summary>
 	/// 1d concentration profile data - Ionic.  2D double array [IonType, Bin] 

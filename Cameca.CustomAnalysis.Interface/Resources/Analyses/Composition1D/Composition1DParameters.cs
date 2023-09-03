@@ -1,6 +1,6 @@
 ﻿namespace Cameca.CustomAnalysis.Interface;
 
-public sealed class Composition1DParameters
+public sealed class Composition1DParameters : IComposition1DParameters
 {
 	public const Composition1DMode DefaultMode = Composition1DMode.FixedBinWidth;
 	public const Composition1DDirection DefaultDirection = Composition1DDirection.Z;
