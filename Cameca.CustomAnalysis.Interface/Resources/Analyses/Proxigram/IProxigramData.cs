@@ -3,10 +3,12 @@ using CommunityToolkit.HighPerformance;
 
 namespace Cameca.CustomAnalysis.Interface;
 
-[Obsolete("Use IProxigramData instead")]
-public interface IProxigramResults : IProxigramData { }
+#pragma warning disable CS0618 // Type or member is obsolete
+public interface IProxigramData : IProxigramResults { }
+#pragma warning restore CS0618 // Type or member is obsolete
 
-public interface IProxigramData
+[Obsolete("Use IProxigramData instead")]
+public interface IProxigramResults
 {
     /// <summary>
     /// 3D double array [ROIBin, IonType, XBin] 
