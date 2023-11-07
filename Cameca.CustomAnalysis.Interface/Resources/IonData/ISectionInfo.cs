@@ -10,4 +10,6 @@ public interface ISectionInfo
     uint ValuesPerRecord { get; }
     byte[] ExtraData { get; }
     bool IsVirtual { get; }
+	bool IsProtected { get => false; }
+	void UpdateExtraData(ReadOnlyMemory<byte> extraData) { }
 }
