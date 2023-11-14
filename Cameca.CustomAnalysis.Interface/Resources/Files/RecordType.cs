@@ -12,9 +12,9 @@ public enum RecordType
 	/// <summary>Each record has a fixed length</summary>
 	Fixed = 1,
 
-	/// <summary>Currently unsupported in AP Suite</summary>
+	// <summary>Currently unsupported in AP Suite</summary>
 	//Variable = 2,
 
-	/// <summary>Currently unsupported in AP Suite</summary>
+	// <summary>Currently unsupported in AP Suite</summary>
 	//List = 3,
 }

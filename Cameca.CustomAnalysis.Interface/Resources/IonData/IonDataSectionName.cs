@@ -2,6 +2,9 @@
 
 namespace Cameca.CustomAnalysis.Interface;
 
+/// <summary>
+/// Constants for accessing <see cref="IIonData"/> section data
+/// </summary>
 public static class IonDataSectionName
 {
 	/// <summary>
@@ -54,6 +57,7 @@ public static class IonDataSectionName
 	/// </summary>
 	public const string FractureGuard = "FractureGuard";
 
+	/// <summary>Unused section only defined in APT File Format specification</summary>
 	[Obsolete("Not an available reconstruction section and not created by AP Suite. Ignore inclusion in APT File Format Known Specific Sections.")]
 	public const string HitType = "Hit Type";
 
@@ -124,6 +128,7 @@ public static class IonDataSectionName
 	/// </summary>
 	public const string Noise = "Noise";
 
+	/// <summary>Unused section only defined in APT File Format specification</summary>
 	[Obsolete("Not an available reconstruction section and not created by AP Suite. Ignore inclusion in APT File Format Known Specific Sections.")]
 	public const string Phase = "Phase";
 

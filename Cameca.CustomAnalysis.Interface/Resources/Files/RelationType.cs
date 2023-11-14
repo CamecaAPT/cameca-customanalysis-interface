@@ -13,13 +13,13 @@ public enum RelationType
 	/// <remarks>Section size must be record size * total ion count</remarks>
 	OneToOne = 1,
 
-	/// <summary>Currently unsupported in AP Suite</summary>
+	// <summary>Currently unsupported in AP Suite</summary>
 	//Indexed = 2,
 
 	/// <summary>Section data is unrelated to ion count</summary>
 	/// <remarks>Section size is unrestricted</remarks>
 	Unrelated = 3,
 
-	/// <summary>Currently unsupported in AP Suite</summary>
+	// <summary>Currently unsupported in AP Suite</summary>
 	//OneToMany = 4,
 }
