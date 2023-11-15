@@ -2,7 +2,7 @@
 
 namespace Cameca.CustomAnalysis.Interface;
 
-public interface IChunkState
+public interface IChunkState : IDisposable
 {
     int Index { get; }
     int Length { get; }
@@ -22,4 +22,5 @@ public interface IChunkState
 		}
 		WriteSectionData<T>(section, buffer);
 	}
+	void IDisposable.Dispose() { }
 }
