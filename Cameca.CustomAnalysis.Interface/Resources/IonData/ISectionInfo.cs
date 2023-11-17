@@ -4,7 +4,7 @@ namespace Cameca.CustomAnalysis.Interface;
 
 public interface ISectionInfo
 {
-    Type Type { get; }
+    Type? Type { get; }
     string Unit { get; }
     ulong RecordCount { get; }
 	uint DataTypeSizeBits { get; }
