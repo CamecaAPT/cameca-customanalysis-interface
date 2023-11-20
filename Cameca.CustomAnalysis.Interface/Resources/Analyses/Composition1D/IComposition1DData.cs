@@ -3,6 +3,12 @@ using CommunityToolkit.HighPerformance;
 
 namespace Cameca.CustomAnalysis.Interface;
 
+
+#pragma warning disable CS0618 // Type or member is obsolete
+public interface IComposition1DData : IComposition1DResults { }
+#pragma warning restore CS0618 // Type or member is obsolete
+
+[Obsolete("Use IComposition1DData instead")]
 public interface IComposition1DResults
 {
 	/// <summary>

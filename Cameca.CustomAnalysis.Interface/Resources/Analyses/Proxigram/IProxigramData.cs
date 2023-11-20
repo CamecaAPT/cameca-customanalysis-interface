@@ -3,6 +3,11 @@ using CommunityToolkit.HighPerformance;
 
 namespace Cameca.CustomAnalysis.Interface;
 
+#pragma warning disable CS0618 // Type or member is obsolete
+public interface IProxigramData : IProxigramResults { }
+#pragma warning restore CS0618 // Type or member is obsolete
+
+[Obsolete("Use IProxigramData instead")]
 public interface IProxigramResults
 {
     /// <summary>
