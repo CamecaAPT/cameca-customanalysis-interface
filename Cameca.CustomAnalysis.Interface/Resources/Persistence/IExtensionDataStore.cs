@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Cameca.CustomAnalysis.Interface;
@@ -6,6 +7,8 @@ namespace Cameca.CustomAnalysis.Interface;
 public interface IExtensionDataStore
 {
 	Task<string?> Get(IExtensionDataStoreKey key, bool isUserScoped, CancellationToken cancellationToken);
-	Task<bool> Set(IExtensionDataStoreKey key, string value, bool isUserScoped, CancellationToken cancellationToken, bool createIfMissing = true);
-}
+	string? GetSync(IExtensionDataStoreKey key, bool isUserScoped, CancellationToken cancellationToken);
 
+	Task<bool> Set(IExtensionDataStoreKey key, string value, bool isUserScoped, CancellationToken cancellationToken, bool createIfMissing = true);
+	bool SetSync(IExtensionDataStoreKey key, string value, bool isUserScoped, CancellationToken cancellationToken, bool createIfMissing = true);
+}

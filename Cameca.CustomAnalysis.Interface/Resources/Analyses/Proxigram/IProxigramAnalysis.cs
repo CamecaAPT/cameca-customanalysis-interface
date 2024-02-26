@@ -26,6 +26,7 @@ public interface IProxigramAnalysis
 			cancellationToken);
 #pragma warning restore CS0618 // Type or member is obsolete
 	}
+	IProxigramData RunSync(InterfaceSubgroupROI volume, IProxigramParameters parameters, IProgress<double>? progress = null, CancellationToken cancellationToken = default);
 
 	[Obsolete("Use Run overload accepting IProxigramParameters and returning IProxigramData instead")]
 	Task<IProxigramResults> Run(InterfaceSubgroupROI volume, ProxigramParameters parameters, IProgress<double>? progress = null, CancellationToken cancellationToken = default);
