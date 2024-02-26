@@ -4,6 +4,6 @@ namespace Cameca.CustomAnalysis.Interface;
 
 public interface IExtensionDataStoreKey
 {
-    string Name { get; }
-    Version Version { get; }
+	string Name { get; }
+	Version Version { get; }
 }

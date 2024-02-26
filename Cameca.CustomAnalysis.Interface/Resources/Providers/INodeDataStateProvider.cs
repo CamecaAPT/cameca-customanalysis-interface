@@ -4,5 +4,5 @@ namespace Cameca.CustomAnalysis.Interface;
 
 public interface INodeDataStateProvider
 {
-    INodeDataState? Resolve(Guid nodeId);
+	INodeDataState? Resolve(Guid nodeId);
 }

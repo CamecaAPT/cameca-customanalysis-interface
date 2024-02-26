@@ -4,5 +4,5 @@ namespace Cameca.CustomAnalysis.Interface;
 
 public interface IIsosurfaceAnalysisProvider
 {
-    IIsosurfaceAnalysis? Resolve(Guid nodeId);
+	IIsosurfaceAnalysis? Resolve(Guid nodeId);
 }

@@ -4,5 +4,5 @@ namespace Cameca.CustomAnalysis.Interface;
 
 public interface IViewModelCaptionProvider
 {
-    IViewModelCaption? Resolve(Guid viewModelId);
+	IViewModelCaption? Resolve(Guid viewModelId);
 }

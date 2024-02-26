@@ -4,5 +4,5 @@ namespace Cameca.CustomAnalysis.Interface;
 
 public interface ICanSaveStateProvider
 {
-    ICanSaveState? Resolve(Guid nodeId);
+	ICanSaveState? Resolve(Guid nodeId);
 }

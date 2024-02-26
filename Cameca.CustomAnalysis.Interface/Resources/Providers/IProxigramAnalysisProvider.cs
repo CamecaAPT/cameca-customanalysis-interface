@@ -4,5 +4,5 @@ namespace Cameca.CustomAnalysis.Interface;
 
 public interface IProxigramAnalysisProvider
 {
-    IProxigramAnalysis? Resolve(Guid nodeId);
+	IProxigramAnalysis? Resolve(Guid nodeId);
 }

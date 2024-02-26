@@ -2,7 +2,7 @@
 
 public enum ProfileType
 {
-    Unknown = 0,
-    Concentration = 1,
-    Density = 2,
+	Unknown = 0,
+	Concentration = 1,
+	Density = 2,
 }

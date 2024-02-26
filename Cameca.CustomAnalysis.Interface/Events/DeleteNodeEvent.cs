@@ -1,5 +1,5 @@
-﻿using System;
-using Prism.Events;
+﻿using Prism.Events;
+using System;
 
 namespace Cameca.CustomAnalysis.Interface;
 
@@ -10,7 +10,7 @@ public class DeleteNodeEventArgs : INodeTargetEvent
 	public Guid NodeId { get; }
 
 	public bool ConfirmationPrompt { get; }
-	
+
 	public DeleteNodeEventArgs(Guid nodeId, bool confirmationPrompt = true)
 	{
 		NodeId = nodeId;

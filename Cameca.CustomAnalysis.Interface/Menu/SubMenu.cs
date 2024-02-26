@@ -10,13 +10,13 @@ public class SubMenu : IMenuItem
 	public bool IsEnabled { get; }
 
 	public IReadOnlyCollection<IMenuItem> MenuItems { get; init; } = Array.Empty<IMenuItem>();
-	
-    public string? ToolTip { get; }
+
+	public string? ToolTip { get; }
 
 	public SubMenu(string caption, bool isEnabled = true, string? toolTip = null)
-    {
-	    Caption = caption;
-	    IsEnabled = isEnabled;
-	    ToolTip = toolTip;
-    }
+	{
+		Caption = caption;
+		IsEnabled = isEnabled;
+		ToolTip = toolTip;
+	}
 }

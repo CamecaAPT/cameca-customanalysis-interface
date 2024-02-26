@@ -4,19 +4,19 @@ namespace Cameca.CustomAnalysis.Interface;
 
 public class CustomAnalysisException : Exception
 {
-    public CustomAnalysisException()
-        : base()
-    {
-    }
+	public CustomAnalysisException()
+		: base()
+	{
+	}
 
-    public CustomAnalysisException(string message)
-        : base(message)
-    {
-    }
+	public CustomAnalysisException(string message)
+		: base(message)
+	{
+	}
 
 
-    public CustomAnalysisException(string message, Exception innerException)
-        : base(message, innerException)
-    {
-    }
+	public CustomAnalysisException(string message, Exception innerException)
+		: base(message, innerException)
+	{
+	}
 }

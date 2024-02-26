@@ -1,5 +1,5 @@
-﻿using System;
-using Prism.Events;
+﻿using Prism.Events;
+using System;
 
 namespace Cameca.CustomAnalysis.Interface;
 
@@ -8,7 +8,7 @@ public class DeleteViewModelEvent : PubSubEvent<DeleteViewModelEventArgs> { }
 public class DeleteViewModelEventArgs : IViewModelTargetEvent
 {
 	public Guid ViewModelId { get; }
-	
+
 	public DeleteViewModelEventArgs(Guid viewModelId)
 	{
 		ViewModelId = viewModelId;
