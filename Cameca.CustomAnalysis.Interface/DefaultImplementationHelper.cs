@@ -12,16 +12,11 @@ internal static class DefaultImplementationHelper
 	/// <remarks>
 	/// To best support extension compatibility, we try to minimize breaking changes to this library. Breaking changes can be both compile time for developers or at runtime.
 	/// The latest versions of AP Suite should always implement or delegate all code in the latest version of this interface.
-	/// If members are added to an interface, developers updating this library will have compile errors, which is not desirable for non-major version releases. This can be
-	/// assisted using default interface implementations. This allows developers to implement the interface where needed, while default implementations can be used otherwise.
-	/// To avoid compile time breaking chagnes, added interface members that can not be deletgated to other members safely (e.g. sync versions of exting async API), can
-	/// instead throw this message. If the consuming extension code updates, this will not break compilation and no exception should be thrown as the API isn't being called.
-	/// If it is called, then a newer version of AP Suite that implementes these methods will be requried, in which case the default implementation should not be used, as
-	/// a real implementation should be available. If an extension updates this library, then it will likely not work with older AP Suite versions anyways, as presumably
-	/// the library is updated to take advantage of some new feature.
+	/// If an older version of AP Suite that doesn't implement these methods attempts to run an extension that uses the newer features, then it will likely not work anyways,
+	/// as presumably the extension uses the updated library to take advantage of some new feature.
 	/// <br />
-	/// Practically speaking, this really shouldn't be hit. It could be if an extension updates a minor version and uses it on a slightly older verision of AP Suite.
-	/// The code should theoretically run, but calling new members from older software needs to be handled in some way. A warning to update AP Suite, which in this case
+	/// Practically speaking, this really shouldn't be hit if users keep AP Suite updated. It could be if an extension updates a minor version and a slightly older verision
+	/// of AP Suite is used to run it. Calling new members from older software needs to be handled in some way. A warning to update AP Suite, which in this case
 	/// presumably should exists, is appropriate.
 	/// </remarks>
 	/// <param name="caller"></param>
