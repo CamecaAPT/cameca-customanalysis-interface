@@ -17,7 +17,8 @@ public interface IIonDataResolver
 	/// <param name="progress"></param>
 	/// <param name="cancellationToken"></param>
 	/// <returns></returns>
-	IIonData? GetIonDataSync(IProgress<double>? progress = null, CancellationToken cancellationToken = default);
+	IIonData? GetIonDataSync(IProgress<double>? progress = null, CancellationToken cancellationToken = default)
+		=> throw DefaultImplementationHelper.RequiresAPSuiteUpdate();
 	/// <summary>
 	/// Returns a cached <see cref="IIonData"/> instance if available. Does not resolve if not available.
 	/// </summary>

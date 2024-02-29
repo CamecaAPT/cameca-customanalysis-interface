@@ -13,5 +13,6 @@ public interface IMassSpectrumRangeManager
 	/// </summary>
 	/// <param name="ranges"></param>
 	/// <returns></returns>
-	bool SetRangesSync(IDictionary<IonFormula, IonRangeDefinition> ranges);
+	bool SetRangesSync(IDictionary<IonFormula, IonRangeDefinition> ranges)
+		=> throw DefaultImplementationHelper.RequiresAPSuiteUpdate();
 }
