@@ -1,4 +1,6 @@
-﻿namespace Cameca.CustomAnalysis.Interface;
+﻿using System;
+
+namespace Cameca.CustomAnalysis.Interface;
 
 public interface INodeDataFilter
 {
@@ -13,4 +15,6 @@ public interface INodeDataFilter
 	bool IsInverted { get; set; }
 	string? FilterProgressMessage { get => null; set { } }
 	void FilterDataChanged() { }
+	[Obsolete("IMPORTANT! READ THIS! This property is not obsolete. Do not enable this if the filter delegate in any ways uses ion type information or resulting data will be wrong. This includes any use of Ion Type data section or counts per ion.")]
+	bool AllowOverrideRanges { get => false; set { } }
 }
