@@ -9,4 +9,6 @@ public interface IRenderDataFactory
 	IHistogramRenderData CreateHistogram();
 	IHistogram2DRenderData CreateHistogram2D();
 	ISelectionWidgetRenderData CreateSelectionWidget();
+	ISeriesRenderData CreateSeries();
+	IErrorRenderData CreateError();
 }
