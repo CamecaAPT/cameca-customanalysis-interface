@@ -3,6 +3,7 @@
 public interface IRenderDataFactory
 {
 	IPointsRenderData CreatePoints();
+	IValuePointsRenderData CreateValuePoints();
 	ISpheresRenderData CreateSpheres();
 	ISurfaceRenderData CreateSurface();
 	ILineRenderData CreateLine();
