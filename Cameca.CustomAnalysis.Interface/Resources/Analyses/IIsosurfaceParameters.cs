@@ -1,10 +1,12 @@
-﻿using System.Windows.Media;
+﻿using System.Collections.Generic;
+using System.Windows.Media;
 
 namespace Cameca.CustomAnalysis.Interface;
 
 public interface IIsosurfaceParameters
 {
-	IonRatio IonRatio { get; }
+	IReadOnlyCollection<string> IonNumerators { get; }
+	IReadOnlyCollection<string> IonDenominators { get; }
 	ProfileType ProfileType { get; }
 	bool AtomicDecomposed { get; }
 	Color Color { get; }
