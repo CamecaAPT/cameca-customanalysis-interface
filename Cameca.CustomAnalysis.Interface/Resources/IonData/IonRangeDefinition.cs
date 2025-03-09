@@ -5,7 +5,7 @@ namespace Cameca.CustomAnalysis.Interface;
 public class IonRangeDefinition
 {
 	public string? Name { get; init; }
-	
+
 	public double? Volume { get; init; }
 
 	public IEnumerable<Range> Ranges { get; }

@@ -4,5 +4,5 @@ namespace Cameca.CustomAnalysis.Interface;
 
 public interface INodeVisibilityControlProvider
 {
-    INodeVisibilityControl? Resolve(Guid nodeId);
+	INodeVisibilityControl? Resolve(Guid nodeId);
 }

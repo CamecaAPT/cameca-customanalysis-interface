@@ -23,6 +23,8 @@ public interface IComposition1DAnalysis
 			cancellationToken);
 #pragma warning restore CS0618 // Type or member is obsolete
 	}
+	IComposition1DData RunSync(IComposition1DParameters parameters, IProgress<double>? progress = null, CancellationToken cancellationToken = default)
+		=> throw DefaultImplementationHelper.RequiresAPSuiteUpdate();
 
 	[Obsolete("Use Run overload accepting IComposition1DParameters and returning IComposition1DData instead")]
 	Task<IComposition1DResults> Run(Composition1DParameters parameters, IProgress<double>? progress = null, CancellationToken cancellationToken = default);

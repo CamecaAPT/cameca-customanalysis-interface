@@ -1,5 +1,5 @@
-﻿using System;
-using CommunityToolkit.HighPerformance;
+﻿using CommunityToolkit.HighPerformance;
+using System;
 
 namespace Cameca.CustomAnalysis.Interface;
 

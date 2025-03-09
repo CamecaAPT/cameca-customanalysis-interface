@@ -14,7 +14,7 @@ public sealed class Composition1DParameters : IComposition1DParameters
 
 	public double BinWidth { get; init; } = DefaultBinWidth;
 
-    public int IonsPerSample { get; init; } = DefaultIonsPerSample;
+	public int IonsPerSample { get; init; } = DefaultIonsPerSample;
 
-    public int IonsPerStep { get; init; } = DefaultIonsPerStep;
+	public int IonsPerStep { get; init; } = DefaultIonsPerStep;
 }

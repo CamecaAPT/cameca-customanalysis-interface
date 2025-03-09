@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Prism.Events;
+using System;
 using System.Windows.Media;
-using Prism.Events;
 
 namespace Cameca.CustomAnalysis.Interface;
 
@@ -17,7 +17,7 @@ public class CreateNodeEventArgs : INodeTargetEvent
 	public string? Name { get; }
 
 	public ImageSource? Icon { get; }
-	
+
 	public CreateNodeEventArgs(string analysisNodeName, Guid parentNodeId, string? name = null, ImageSource? icon = null)
 	{
 		AnalysisNodeName = analysisNodeName;

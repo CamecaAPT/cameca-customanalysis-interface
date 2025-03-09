@@ -8,6 +8,7 @@ public interface INodeInfo
 {
 	string Name { get; }
 	string Title { get; }
+	string DataSectionName { get { return Name[..32]; } }
 	string TypeId { get; }
 	ImageSource? Icon { get; }
 	Guid? Parent { get; }

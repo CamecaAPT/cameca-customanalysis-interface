@@ -4,5 +4,5 @@ namespace Cameca.CustomAnalysis.Interface;
 
 public interface IIonDataProvider
 {
-    IIonDataResolver? Resolve(Guid nodeId);
+	IIonDataResolver? Resolve(Guid nodeId);
 }

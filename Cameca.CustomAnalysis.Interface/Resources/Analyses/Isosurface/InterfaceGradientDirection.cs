@@ -2,6 +2,6 @@
 
 public enum InterfaceGradientDirection
 {
-    High,
-    Low
+	High,
+	Low
 }

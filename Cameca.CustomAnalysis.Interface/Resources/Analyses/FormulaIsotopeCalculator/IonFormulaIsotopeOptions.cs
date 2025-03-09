@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Cameca.CustomAnalysis.Interface;
+﻿namespace Cameca.CustomAnalysis.Interface;
 
 /// <summary>
 /// Filtering options for calculating complex formula isotopes.

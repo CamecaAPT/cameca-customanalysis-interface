@@ -4,5 +4,5 @@ namespace Cameca.CustomAnalysis.Interface;
 
 public interface IIdProvider
 {
-    Guid Get(object item);
+	Guid Get(object item);
 }
