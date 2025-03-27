@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace Cameca.CustomAnalysis.Interface;
 
@@ -88,5 +89,48 @@ public sealed class IonFormula : IReadOnlyDictionary<string, int>, IEquatable<Io
 	public static bool operator !=(IonFormula? left, IonFormula? right)
 	{
 		return !EqualityComparer<IonFormula>.Default.Equals(left, right);
+	}
+
+	private const string CarbonSymbol = "C";
+	private const string HydrogenSymbol = "H";
+
+	public override string ToString()
+	{
+		var sb = new StringBuilder();
+		// If carbon, then carbon first, then hydrogen, then all other alphabetically
+		if (this.Select(c => c.Key).Contains(CarbonSymbol))
+		{
+			var carbonComponent = this.First(c => c.Key == CarbonSymbol);
+			AddComponent(sb, carbonComponent.Key, carbonComponent.Value);
+			if (TryGetValue(HydrogenSymbol, out int hCount))
+			{
+				AddComponent(sb, HydrogenSymbol, hCount);
+			}
+			foreach (var (name, count) in this.OrderBy(c => c.Key))
+			{
+				if (name != CarbonSymbol && name != HydrogenSymbol)
+				{
+					AddComponent(sb, name, count);
+				}
+			}
+		}
+		// If no carbon, then all alphabetically, including hydrogen
+		else
+		{
+			foreach (var (name, count) in this.OrderBy(c => c.Key))
+			{
+				AddComponent(sb, name, count);
+			}
+		}
+		return sb.ToString();
+
+		static void AddComponent(StringBuilder sb, string name, int count)
+		{
+			sb.Append(name);
+			if (count > 1)
+			{
+				sb.Append(count);
+			}
+		}
 	}
 }
