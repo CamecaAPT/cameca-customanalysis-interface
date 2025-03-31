@@ -12,4 +12,6 @@ public interface IColorMap : INotifyPropertyChanged
 	Color OutOfRangeTop { get; set; }
 	Color Top { get; set; }
 	ObservableCollection<IColorStop> ColorStops { get; }
+	float TopValue { get => 100f; set { } }
+	float BottomValue { get => 0f; set { } }
 }

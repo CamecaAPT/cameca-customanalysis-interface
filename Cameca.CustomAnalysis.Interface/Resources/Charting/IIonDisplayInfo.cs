@@ -10,8 +10,13 @@ public interface IIonDisplayInfo
 
 	Color GetColor(IIonTypeInfo ionTypeInfo)
 	{
+		return GetColor(ionTypeInfo.Formula, ionTypeInfo.Name);
+	}
+
+	Color GetColor(IonFormula formula, string name)
+	{
 #pragma warning disable CS0618
-		return GetColor(ionTypeInfo.Formula);
+		return GetColor(formula);
 #pragma warning restore CS0618
 	}
 }
