@@ -9,4 +9,5 @@ public interface IChart2DSlice : INotifyPropertyChanged
 	float Max { get; }
 	Color Color { get; set; }
 	bool IsSelected { get; set; }
+	void SetBounds(float min, float max) { }
 }
